@@ -1,7 +1,6 @@
 package com.example.weather.logic.dao
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.example.weather.SunnyWeatherApplication
 import com.example.weather.logic.model.Place
@@ -16,7 +15,7 @@ object PlaceDao {
     }
 
     fun getSavedPlace():Place{
-        val placeJson = sharedPreferences().getString("sunny_weather", "")
+        val placeJson = sharedPreferences().getString("place", "")
         return Gson().fromJson(placeJson,Place::class.java)
     }
 
